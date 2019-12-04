@@ -1,0 +1,168 @@
+body{
+    background: url('../Images/arduino.png');
+    background-repeat: no-repeat;
+    background-position: -275px -225px;    
+}
+
+.SignUpContainer{
+    background-color: white;   
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    border-radius: 26px;
+}
+
+.RightPart{
+    background-color:white;
+    position: absolute;
+    width:60%;
+    height: 100%;
+    left: 40%;  
+    color: #21B6A8;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.RightPart h1{
+    font-size: 40px;
+    position: absolute;
+    top: 5%;
+    left: 26%;
+}
+
+.RightPart p{
+    font-size: 17px;
+    position: absolute;
+    top: 42.5%;
+    left: 10%;
+}
+.RightPart p:last-of-type{
+    font-size: 17px;
+    position: absolute;
+    top: 49.5%;
+    left: 15.75%;
+}
+
+.RightPart button{
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    color: white;
+    background-color: #21B6A8;
+    width:50%;
+    height: 45px;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.RightPart input{
+    position: absolute;
+    left: 22.5%;
+    width: 55%;
+    height: 50px;
+    background-color: rgb(235, 235, 235);
+    border: 1px solid lightgrey;
+    font-family: Georgia;
+    color: grey;
+    padding-left: 45px;
+}
+
+#Name{
+    top: 17.5%;
+}
+
+#email{
+    top: 30%;
+}
+
+#password{
+    top: 42.5%;
+}
+
+#PhoneNumber{
+    top: 55%;
+}
+
+#adresse{
+    top: 67.5%;
+}
+.LeftPart{
+    position: absolute;
+    width:40%;
+    height: 100%;  
+    background-color: #21B6A8;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.LeftPart h1{
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 26%;
+    font-size: 30px;
+}
+
+.LeftPart button{
+    position: absolute;
+    top: 60%;
+    left: 22.5%;
+    color: white;
+    background-color: #21B6A8;
+    width:50%;
+    height: 45px;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.LeftPart .btn-light:hover{
+    background-color: white;
+}
+
+.LeftPart p{
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    top: 42.5%;
+    left: 22.5%;
+}
+.LeftPart p:last-of-type{
+    font-size: 17px;
+    position: absolute;
+    top: 49.5%;
+    left: 23.5%;
+}
+
+.btn:hover{
+    color: grey;
+}
+
+#span1{
+    position: absolute;
+    top: 32.5%;
+    left: 15%;
+    font-family: Georgia;
+}
+
+#span2{
+    position: absolute;
+    top: 45%;
+    left: 32.5%;
+    font-family: Georgia;
+}
+
+#span3{
+    position: absolute;
+    top: 57.5%;
+    left: 15%;
+    font-family: Georgia;
+}
+
+#span4{
+    position: absolute;
+    top: 69.5%;
+    left: 15%;
+    font-family: Georgia;
+}

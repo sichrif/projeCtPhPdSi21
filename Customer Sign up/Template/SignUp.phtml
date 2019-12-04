@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <link rel='stylesheet' type="text/css" href="Css/SignUp.CSS">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="SignUpContainer">
+        <div class="RightPart">
+            <h1>Create account</h1>
+            <div class="form-group">
+                <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                        <input id="Name" class="form-control" type="text" placeholder="Name" name="name" required >
+                        <span class="text-danger" id="span1"><?php if(isset($usernameError)) echo  $usernameError ?></span>
+                        <input id="email" class="form-control" type="text" placeholder="Last Name" name="email" required>
+                        <span class="text-danger" id="span2"><?php if(isset($emailError)) echo  $emailError ?></span>
+                        <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
+                        <span class="text-danger" id="span3"><?php if(isset($$passwordError)) echo  $$passwordError ?></span>
+                        <input id="PhoneNumber" class="form-control" type="text" placeholder="Phone Number" name="phone" required>
+                        <input id="adresse" type="text" placeholder="Email" type="text" placeholder="adresse" name="adresse" required>
+                        <button class="btn btn-light sign" name="signUp">Sign Up</button>
+                </form>
+            </div>
+        </div> 
+        <div class="LeftPart">
+            <h1>Hello Friend</h1>
+            <p>Enter your personal detail</p>
+            <p>and start journey with us</p>
+            <a href="LogIn.php"><button class="btn btn-light">Log In</button></a>
+        </div>
+    </div>
+</body>
+</html>
