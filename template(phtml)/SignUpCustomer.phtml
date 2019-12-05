@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        span{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" class="form-control">
+            <label for="name">Name :</label> 
+            <input type="text" class="form-control" placeholder="Name goes here" name="name" required >
+                <span class="text-danger" id="span1"><?php if(isset($nameError)) echo  $nameError ?></span>
+            <label for="adresse">Adresse :</label>
+            <input type="text" class="form-control" placeholder="Adresse goes here" name="adresse" required>
+            <label for="phone Number">Phone Number :</label> 
+            <input type="text" class="form-control" placeholder="Phone number goes here" name="phoneNumber" required>
+            <span class="text-danger" id="span1"><?php if(isset($phoneError)) echo  $phoneError ?></span>
+            <label for="email">Email :</label> 
+            <input type="text" class="form-control" placeholder="Email goes here" name="email" required>
+            <span class="text-danger" id="span1"><?php if(isset($emailError)) echo  $emailError ?></span>
+            <label for="password">Password :</label>
+            <input type="password" placeholder="Password goes here" class="form-control" name="password" required >
+            <span class="text-danger" id="span1"><?php if(isset($passwordError)) echo  $passwordError ?></span>
+            <label for="password confimation">Password Cofirmation :</label>
+            <input type="password" placeholder="Rewrite your Password" class="form-control" name="passwordConf" required>
+            <span class="text-danger" id="span1"><?php if(isset($passwordConfErr)) echo  $passwordConfErr ?></span>
+            <button class="btn btn-primary" name="signUp">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
