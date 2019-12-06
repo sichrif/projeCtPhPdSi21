@@ -27,16 +27,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ">
       <li class="nav-item active" style="witdh:150px">
-        <a class="nav-link " href="#">Check Orders <span class="sr-only">(current)</span></a>
+        <a class="nav-link " href="orders.php">Check Orders <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active ">
         <a class="nav-link" href="#">Vehicle <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="create.php">Add a product <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="delete_all.php">Delete all products <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">Manage the products <span class="sr-only">(current)</span></a>
       </li>
       
     </ul>
@@ -57,7 +54,7 @@
 <div class="container">
 
 <table class="table">
-<thead class="thead-dark" style="color:white;background-color:#f8a978;">
+<thead class="thead-dark">
  <tr>
     
     <td><strong>  Order Number</strong></td>
@@ -76,7 +73,7 @@
    $product = new product;
    $listOrders = $product->readAllOrders();
    while ($data = $listOrders->fetch()) 
-      { echo ' <tbody style="color:black;background-color:#49beb7;"> ';
+      { echo ' <tbody> ';
         echo '<tr>';
         
         echo '<td>'.$data['oid '].'</td>';
