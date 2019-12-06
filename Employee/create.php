@@ -15,6 +15,7 @@
   <div class="col-xs-4">
     <label>Name</label>
     <input type="text" class="form-control" name="name">
+    
   </div>&nbsp; &nbsp;
   <div class="col-xs-4">
     <label>Description</label>
@@ -28,10 +29,11 @@
   </div>&nbsp; &nbsp;
   <div class="col-xs-4">
     <label>Image</label>
-    <input type="" class="form-control" name="file">
+    <input type="text" class="form-control" name="file">
   </div>
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="submit" name="done"  class="btn btn-primary">Save</button>
+   <?php if (isset($done)) echo  'Added with success !'; ?>
 </form>
 </div>
 </body>

@@ -15,7 +15,7 @@ class product{
 
     public function readAllProducts(){
         try{
-            $req='SELECT * FROM products';
+            $req='SELECT * FROM product';
             $result = $this->cnx->prepare($req);
             $result->execute();
             return $result;
@@ -28,7 +28,7 @@ public function add_new($name,$description,$price,$file)
 {
     try{
     
-    $repp='INSERT INTO products(name, description, price , file) VALUES ( :param_name,:param_description,:param_price,:param_file);';
+    $repp='INSERT INTO product(name, description, price , file) VALUES ( :param_name,:param_description,:param_price,:param_file);';
     $rep=$this->cnx->prepare($repp);
     $rep->bindParam(':param_name',$name);
     $rep->bindParam(':param_description',$description);
@@ -43,7 +43,7 @@ public function add_new($name,$description,$price,$file)
 
 public function delete($id){
     try {
-        $repp='DELETE FROM products WHERE pid =:param_pid';
+        $repp='DELETE FROM product WHERE pid =:param_pid';
         $rep=$this->cnx->prepare($repp);
         $rep->bindParam(':param_pid',$_GET['pid']);
         $rep->execute();
@@ -54,9 +54,20 @@ public function delete($id){
          }
 }
 
+public function deleteAll(){
+    try{
+        $repp='DELETE FROM product ';
+        $rep=$this->cnx->prepare($repp);
+        $rep->execute();
+        return $rep;
+    }catch (Exception $e) {
+        echo  $e->getMessage();
+         }
+}
+
 public function update($name,$description,$price,$file,$pid){
     try {
-        $repp='UPDATE products SET name=:param_name,description=:param_description,price=:param_price,file=:param_file where pid=:param_pid';
+        $repp='UPDATE product SET name=:param_name,description=:param_description,price=:param_price,file=:param_file where pid=:param_pid';
         $rep=$this->cnx->prepare($repp);
         $rep->bindParam(':param_name',$name);
         $rep->bindParam(':param_description',$description);

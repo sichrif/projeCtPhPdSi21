@@ -12,7 +12,7 @@
  include 'classes/product.class.php' ; 
  $DB = new BaseDonne;
  $base = $DB->connect();          
- $rep=$base->prepare('SELECT * FROM products WHERE pid =:param_id');
+ $rep=$base->prepare('SELECT * FROM product WHERE pid =:param_id');
  $rep->bindParam(':param_id', $_GET['pid']); 
  $rep->execute();  
  $data = $rep->fetch();

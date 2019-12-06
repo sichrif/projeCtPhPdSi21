@@ -3,7 +3,7 @@ class BaseDonne{
 
     public $cnx=null;
     private $dbhost='localhost';
-    private $dbname='projet';
+    private $dbname='restaurant';
     private $dbuser='root';
     private $pass='';
 
