@@ -81,6 +81,18 @@ public function update($name,$description,$price,$file,$pid){
         echo  $e->getMessage();
          }
 }
+
+public function readAllOrders(){
+    try{
+        $req='SELECT * FROM ordere';
+        $res=$this->cnx->prepare($req);
+        $res->execute();
+        return $res;
+
+    }catch (PDOException $e){
+    echo $e->getMessage();
+    }
+}
 }
 
 ?>
