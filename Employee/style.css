@@ -19,7 +19,7 @@ body{
 }
 .thead-dark{
     color:white;
-    background-color:#383848;"
+    background-color:#383848;
 }
 tbody{
     color:black;
@@ -49,4 +49,20 @@ li:hover{
     font-size: 30px;
 }
 
+.card{
+    width: 900px;
+    height: 300px;
+    border-bottom: 8px solid #b6903d;
+    background-color: #8c8c9477;
+    box-shadow: 12px 12px 10px #b89c61;
+    margin-left: 50px;
+}
+
+.card-img{
+    height: 290px;
+    width:300px ;
+}
+.men{
+    padding-top: 110px;
+}
 
