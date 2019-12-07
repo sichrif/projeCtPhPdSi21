@@ -53,34 +53,39 @@ class ClassName extends AnotherClass
         }
         }
         }
-    public function addorder(){
+    public function addcart(){
     	try{
     	$prod=$this->readProducts();
     	$Customer=$this->readCustomer();
-    	$vehicule=$this->readallvehiculeLibre();
     	$pid=$prod['pid'];
     	$cid=$Customer['cid'];
-    	$vid=$vehicule['vid'];
-    	$quantity=$_POST['quantity'];
-    	$delivery=$_POST['Delivery'];
-    	$req='INSERT INTO `ordere` (`pid`, `Cid`, `Quantity_product`, `Odate`, `Quantity`, `Delivery`, `Vehicle`)
-    	 VALUES (:pid,:cid,:quantity,now(),:quantity,0,:vid)';
+    	$qty=$_POST['quantity'];
+    	$req='INSERT INTO `cart`(`cid`, `pid`, `qty`)
+    	 VALUES (:cid,:pid,:quantity)';
     	 $l=$this->cnx->Prepare($req);
-        
+        $l->bindParam(':cid', $cid);        
         $l->bindParam(':pid', $pid);
-        $l->bindParam(':cid', $cid);
-        $l->bindParam(':quantity', $quantity);
-        $l->bindParam(':quantity', $quantity);
-        $l->bindParam(':vid', $vid);   
+        $l->bindParam(':quantity', $qty);
         $l->execute();
-        $this->changevehiculestatus($vid);
         }catch(PDOException $th){
             echo $th->getMessage();
         }
         }
-        public function removeOrder($id){
+        public function removecart($cid){
         	try {
-                $req=("DELETE FROM ordere WHERE id=:id");
+                $req=("DELETE FROM cart WHERE cid=:cid");
+                $res=$this->cnx->prepare($req);
+                $res->bindparam(':cid',$cid);
+                $res->execute();
+            } catch (PDOException $th) {
+                echo $th->getMessage();
+                
+            }
+
+        }
+          public function removeoneorder($id){
+        	try {
+                $req=("DELETE FROM cart WHERE id=:id");
                 $res=$this->cnx->prepare($req);
                 $res->bindparam(':id',$id);
                 $res->execute();
@@ -90,9 +95,9 @@ class ClassName extends AnotherClass
             }
 
         }
-        public function readallOrder(){
+        public function readallCart(){
         	 try {
-            $req='SELECT * FROM ordere';
+            $req='SELECT * FROM cart';
             $resultat=$this->cnx->Prepare ($req);
             $resultat->execute();
             return $resultat;
