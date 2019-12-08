@@ -34,26 +34,16 @@
     <div id="pre-loader">
         <div class="loader-holder">
             <div class="frame">
-                <img src="images/Preloader.gif" alt="Foody" />
+                <img src="images/Preloader.gif" alt="Laboom" />
             </div>
         </div>
     </div>
     <div class="wrapper">
         <!-- Start Header -->
         <header>
-                <?php
-                ;
-                include 'classes/client.class.php' ; 
-     $DB = new BaseDonne;
-     $base = $DB->connect();          
-     $rep=$base->prepare('SELECT * FROM customer WHERE cid =:param_cid');
-     $rep->bindParam(':param_cid', $_GET['cid']); 
-     $aa=$_GET['cid'];
-     $rep->execute();  
-     $data = $rep->fetch();
-    ?>
+   
+
             <div class="header-part header-reduce sticky">
-                
                 <div class="header-top">
                     <div class="container">
                         <div class="header-top-inner">
@@ -65,7 +55,8 @@
                                 <div class="language-menu">
                                     <a href="#" class="current-lang">Setting Menu <i class="fa fa-caret-down" aria-hidden="true"></i></a>
                                         <ul>
-                                        <li><a href="setting.php?cid=<?php $_GET['cid'] ?>"> <i class="fa fa-angle-right" aria-hidden="true"></i>Account Setting</a></li>                                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Log out</a></li>
+                                            <li><a href="modifier.php?cid=<?php $data['cid'] ?>"> <i class="fa fa-angle-right" aria-hidden="true"></i>Account Setting</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Log out</a></li>
                                         </ul>
                                 </div>
                             </div>
@@ -145,16 +136,7 @@
                     </li>
 
                     <li class="mega-menu">
-                            <a href="orders.html">Orders</a>
-                    </li>
-                    
-                    <li class="mega-menu">
-                        <a href="#about_us">About Us</a>
-
-                    </li>
-
-                    <li class="mega-menu">
-                        <a href="#contact">Contact</a>
+                        <a href="orders.html">Orders</a>
                     </li>
                 </ul>
             </div>
@@ -173,182 +155,220 @@
             <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5" style="background-image: url('images/breadbg1.jpg');">
                 <div class="container">
                     <div class="breadcrumb-inner">
-                        <h2>SHOP</h2>
+                        <h2>SHOP SINGLE</h2>
                         <a href="#">Home</a>
                         <span>Shop</span>
                     </div>
                 </div>
             </section>
             <!-- End Breadcrumb Part -->
-            <section class="home-icon blog-main-section shop-page">
+            <section class="home-icon shop-single pad-bottom-remove">
                 <div class="icon-default">
                     <img src="images/scroll-arrow.png" alt="">
                 </div>
                 <div class="container">
-                    <div class="portfolioFilter">
-                        <div class="portfolioFilter-inner bg-skeen">
-                            <a href="javascript:;" data-filter=".breakfast" class="current">BREAKFAST</a>
-                            <a href="javascript:;" data-filter=".dessert">DESSERT</a>
-                            <a href="javascript:;" data-filter=".dinner">DINNER</a>
-                            <a href="javascript:;" data-filter=".freshfood">FRESHFOOD</a>
-                            <a href="javascript:;" data-filter=".lunch">LUNCH</a>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="slider slider-for slick-shop">
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="images/img64.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slider slider-nav slick-shop-thumb">
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                                <div><img src="images/img65.png" alt=""></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolioContainer row" data-defaultfilter=".breakfast">
-                        <div class="col-md-3 col-sm-4 col-xs-12 breakfast dessert dinner wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                            <div class="shop-main-list">
-                                <div class="shop-product">
-                                    <img src="images/img56.png" alt="">
-                                    <div class="cart-overlay-wrap">
-                                        <div class="cart-overlay">
-                                            <a href="shop_single.html" class="shop-cart-btn">ADD TO CART</a>
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <h4 class="text-coffee">Caramel Cheesecake</h4>
+                            
+                            <p>If you're planning to start an online store right away, look no further, get this template on templateForest. This product page demonstrates a "Simple Product".</p>
+                            <h3 class="text-coffee">$290.50</h3>
+                            <div class="price-textbox">
+                                <span class="minus-text"><i class="icon-minus"></i></span>
+                                <input type="text" name="txt" placeholder="1" pattern="[0-9]">
+                                <span class="plus-text"><i class="icon-plus"></i></span>
+                            </div>
+                            <a href="#" class="filter-btn btn-large"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Add to Cart</a>
+                            <div class="share-tag">
+                                <div class="row">
+                                    
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="tag-wrap">
+                                            <h5>TAGS</h5>
+                                            <a href="#" class="tag-btn">Audio</a>
+                                            <a href="#" class="tag-btn">Service</a>
+                                            <a href="#" class="tag-btn">Cupcake</a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="shop_single.html"><h5>Paper Pouch</h5></a>
-                                <h5><strong>$ 15.00</strong></h5>
                             </div>
-                        </div>
-                        
-                    </div>
-                    <div class="gallery-pagination">
-                        <div class="gallery-pagination-inner">
-                            <ul>
-                                <li><a href="#" class="pagination-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> <span>PREV page</span></a></li>
-                                <li class="active"><a href="#"><span>1</span></a></li>
-                                <li><a href="#"><span>2</span></a></li>
-                                <li><a href="#"><span>3</span></a></li>
-                                <li><a href="#" class="pagination-next"><span>next page</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Start Tab Part -->
+            
+            <section class="default-section comment-review-tab bg-grey v-pad-remove wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    
+                    <div class="build-title">
+                            <h3>Description</h3>
+                    </div>
+                <div class="title text-center">
+                            
+                    <h6 class="heade-xs">We are a second-generation family business established in 1972</h6>
+                </div>
+            </section>
+            <!-- End Tab Part -->
+            <!-- Start Related Product -->
+            <section class="related-product wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="container">
+                    <div class="build-title">
+                        <h3>Related Products</h3>
+                    </div>
+                    <div class="owl-carousel owl-theme" data-items="4" data-laptop="3" data-tablet="2" data-mobile="1" data-nav="false" data-dots="true" data-autoplay="true" data-speed="1800" data-autotime="5000">
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img66.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img67.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img68.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img69.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img66.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img67.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img68.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img69.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img66.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img67.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img68.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="related-img">
+                                <img src="images/img69.png" alt="">
+                            </div>
+                            <div class="related-info">
+                                <h6><a href="#">Blanched Garlic</a></h6>
+                                <h6><a href="#"><strong>$ 15.00</strong></a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Related Product -->
         </div>
     </main>
     <!-- End Main -->
-    <!-- Start About Us -->
-    <section class="client banner-bg invert invert-black home-icon wow fadeInDown" data-background="images/banner3.jpg" data-wow-duration="1000ms" data-wow-delay="300ms" id="about_us">
-        <div class="icon-default icon-black">
-            <img src="images/icon21.png" alt="">
-        </div>
-        <div class="container">
-            <div class="build-title">
-                <h2>About Us</h2>
-                <h6>1500+ Satisfied Clients</h6>
-            </div>
-            <div class="client-say">
-                <div class="owl-carousel owl-theme" data-items="1" data-laptop="1" data-tablet="1" data-mobile="1" data-nav="false" data-dots="true" data-autoplay="true" data-speed="1800" data-autotime="5000">
-                    <div class="item">
-                        <p><img src="images/client1.png" alt=""></p>
-                        <h5>Alice Williams</h5>
-                        <p>Kitchen Manager</p>
-                        <p>Success isn’t really that difficult. There is a significant portion of the
-                            <br> population here in North America, that actually want and need
-                            <br>success really no magic to be hard.</p>
-                    </div>
-                    <div class="item">
-                        <p><img src="images/client1.png" alt=""></p>
-                        <h5>Alice Williams</h5>
-                        <p>Kitchen Manager</p>
-                        <p>Success isn’t really that difficult. There is a significant portion of the
-                            <br> population here in North America, that actually want and need
-                            <br>success really no magic to be hard.</p>
-                    </div>
-                    <div class="item">
-                        <p><img src="images/client1.png" alt=""></p>
-                        <h5>Alice Williams</h5>
-                        <p>Kitchen Manager</p>
-                        <p>Success isn’t really that difficult. There is a significant portion of the
-                            <br> population here in North America, that actually want and need
-                            <br>success really no magic to be hard.</p>
-                    </div>
-                    <div class="item">
-                        <p><img src="images/client1.png" alt=""></p>
-                        <h5>Alice Williams</h5>
-                        <p>Kitchen Manager</p>
-                        <p>Success isn’t really that difficult. There is a significant portion of the
-                            <br> population here in North America, that actually want and need
-                            <br>success really no magic to be hard.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End About Us -->
-    
-     <!-- Start Main -->
-     <main>
-            <div class="main-part">
-                
-                <!-- Start Contact Part -->
-                <section class="default-section contact-part home-icon" id="contact">
-                    <div class="icon-default">
-                        <img src="images/scroll-arrow.png" alt="">
-                    </div>
-                    <div class="container">
-                        <div class="title text-center">
-                            <h2 class="text-coffee">Contact Us</h2>
-                            <h6 class="heade-xs">We are a second-generation family business established in 1972</h6>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                <h5 class="text-coffee">Leave us a Message</h5>
-                                <p>Aenean massa diam, viverra vitae luctus sed, gravida eget est. Etiam nec ipsum porttitor, consequat libero eu, dignissim eros. Nulla auctor lacinia enim id mollis.</p>
-                                <form class="form" method="post" name="contact-form">
-                                    <div class="alert-container"></div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <label>First Name *</label>
-                                            <input name="first_name" type="text" required>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12"> 
-                                            <label>Last Name *</label>
-                                            <input name="last_name" type="text" required>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <label>Email *</label>
-                                            <input name="email" type="email" required>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <label>Subject *</label>
-                                            <input name="subject" type="text" required>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <label>Your Message *</label>
-                                            <textarea name="message" required></textarea>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input name="submit" value="SEND MESSAGE" class="btn-black pull-right send_message" type="submit">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                <address>
-                                    <span class="text-primary co-title">Our Address</span>
-                                    <p>Route Menzel Abderrahmen – Zarzouna 7021 Bizerte، 7021</p>
-                                    <p><a href="tel:1234567890">23 349 082</a>
-                                        <br> <a href="mailto:support@despina.com">support@foody.com</a></p>
-                                </address>
-                                <h5 class="text-coffee">Opening Hours</h5>
-                                <ul class="time-list">
-                                    <li><span class="week-name">Monday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Tuesday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Wednesday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Thursday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Friday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Saturday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Sunday</span> <span>Closed</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Contact Part -->
-            </div>
-        </main>
-        <!-- End Main -->
        <!-- Start Footer -->
        <footer>
         <div class="footer-part wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">

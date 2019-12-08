@@ -7,7 +7,7 @@
         $cpassword=$_POST['cpassword'];
         $phone=$_POST['phone'];
         $adresse=$_POST['adresse'];
-        //$cid=$_POST['cid'];
+        $cid=$_POST['cid'];  
             if(!preg_match("/^[a-zA-Z0-9 ]+$/",$name)){
                 $usernameError = "Name must only contain letter,numbers and spaces";
                 goto displayOnly;
