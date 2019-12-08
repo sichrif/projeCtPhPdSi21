@@ -126,18 +126,18 @@
                                 <div class="card card-register mx-auto mt-5">
                                     <div class="text-center card-header">ADD NEW PRODUCT</div>
                                     <div class="card-body">
-                                        <form method="POST" action="php/store.php">
+                                        <form method="POST" action="php/store.php" enctype='multipart/form-data'>
                                             <div class="form-group">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="name" name="name" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
+                                                            <input type="text" id="name" name="name" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus"/>
                                                             <label for="name">nom  de produit </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="lasdescription" name="description" class="form-control" placeholder="description de produit " required="required">
+                                                            <input type="text" id="lasdescription" name="description" class="form-control" placeholder="description de produit " required="required"/>
                                                             <label for="description">description</label>
                                                         </div>
                                                     </div>
@@ -160,15 +160,14 @@
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="number" id="price" name="price" class="form-control" placeholder="prix de produit " required="required">
+                                                            <input type="number" id="price" name="price" class="form-control" placeholder="prix de produit " required="required"/>
                                                             <label for="price">prix de produit </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type='file' name='file' id="file"   required="required">
-                                                            
-                                                            
+                                                                <input type='file' name='file' />   
+                                                          
                                                         </div>
                                                     </div>
                                                 </div>

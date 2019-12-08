@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
@@ -121,7 +121,7 @@
                         <i class="fas fa-table"></i> Data Table Example</div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>employer ID</th>
@@ -162,7 +162,11 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    
+                    <div id="datetime" class="card-footer small text-muted"></div>
+                    <script>
+                            document.getElementById("datetime").innerHTML =new Date();
+                        </script>
                 </div>
 
             </div>

@@ -159,7 +159,10 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    <div id="datetime" class="card-footer small text-muted"></div>
+                    <script>
+                            document.getElementById("datetime").innerHTML =new Date();
+                        </script>
                 </div>
 
             </div>

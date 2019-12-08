@@ -29,8 +29,8 @@ public function add_new($name,$description,$price,$file)
         try{
             if(isset($_POST['done'])){
             
-                $target_dir = "image/";
-                $target_file = $target_dir . basename($file);
+                $target_dir = "../../image/";
+                $target_file = $target_dir . basename($file['name']);
         
              
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -39,20 +39,16 @@ public function add_new($name,$description,$price,$file)
                 $extensions_arr = array("jpg","jpeg","png","gif");
         
               
-                if( in_array($imageFileType,$extensions_arr) ){
-                    
-                 
-                    
-                    
+                if( in_array($imageFileType,$extensions_arr) ){                    
     $repp='INSERT INTO product(name, description, price , file) 
     VALUES ( :param_name,:param_description,:param_price,:param_file);';
     $rep=$this->cnx->prepare($repp);
     $rep->bindParam(':param_name',$name);
     $rep->bindParam(':param_description',$description);
     $rep->bindParam(':param_price',$price);
-    $rep->bindParam(':param_file',$file);
+    $rep->bindParam(':param_file',$file['name']);
     $rep->execute();
-    move_uploaded_file($file,'image/'.$file);
+    move_uploaded_file($file['tmp_name'],'../image/'.$file['name']);
 
  return $rep;
               }}

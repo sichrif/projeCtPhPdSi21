@@ -150,7 +150,7 @@
                                      echo '<td>'.$data['description'].'</td>';
                                      echo '<td>'.$data['categorie'].'</td>';
                                      echo '<td>'.$data['price'].'</td>';
-                                     echo '<td><img style="width:250px;height:200px" src="php/image/'.$data['file'].'"/></td>';
+                                     echo '<td><img style="width:250px;height:200px" src="image/'.$data['file'].'"/></td>';
                                      echo '<td><a href="php/editer_product.php?pid='.$data['pid'].'"><i class="fa fa-edit"></i></a></td>';
                                      echo '<td><a href="php/delete_product.php?pid='.$data['pid'].'"><i class="fa fa-trash"></i></a></td>';
                                     echo '</tr></tbody>';
