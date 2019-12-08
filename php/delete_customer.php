@@ -1,8 +1,7 @@
 <?php
 
-require 'Classes/employee.class.php' ;
- $id=$_GET['vid'];
- $del = new employee;
- $eff = $del->delete($id);
+require 'Classes/customer.class.php' ;
+ $del = new customer;
+ $eff = $del->delete();
  
- header("location:../employee.php");
+// header("location:../customer.php");

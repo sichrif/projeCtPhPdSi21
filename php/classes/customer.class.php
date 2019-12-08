@@ -41,13 +41,13 @@ class customer{
 }catch (Exception $e) {
     echo  $e->getMessage();
      }
-}
+}*/
 
-public function delete($id){
+public function delete(){
     try {
-        $repp='DELETE FROM vehicle WHERE vid =:param_pid';
+        $repp='DELETE FROM customer WHERE cid =:param_pid';
         $rep=$this->cnx->prepare($repp);
-        $rep->bindParam(':param_pid',$_GET['vid']);
+        $rep->bindParam(':param_pid',$_GET['cid']);
         $rep->execute();
         return $rep;
     
@@ -65,23 +65,27 @@ public function delete($id){
     }catch (Exception $e) {
         echo  $e->getMessage();
          }
-}
+}*/
 
-public function update($vid,$statu,$v_number){
+public function update($cid,$name,$phone,$adressse,$email){
     try {
-        $rep='UPDATE `vehicle` SET 
-        `vid`=:vid,`status`=:statu,`vehicle_number`=:v_number WHERE `vid`=:vid';
+        $rep='UPDATE `customer` SET 
+        `cid`=:cid,`name`=:name,`email`=:email,`phone`=:phone,`adresse`=:adressse 
+        WHERE 1';
         $rep=$this->cnx->prepare($rep);
-        $rep->bindParam(':vid',$vid);
-        $rep->bindParam(':statu',$statu);
-        $rep->bindParam(':v_number',$v_number);
+        $rep->bindParam(':cid',$cid);
+        $rep->bindParam(':name',$name);
+        $rep->bindParam(':email',$phone);
+        $rep->bindParam(':phone',$adressse);
+        $rep->bindParam(':adresse',$email);
+
         $rep->execute();
         return $rep;
     
     }catch (Exception $e) {
         echo  $e->getMessage();
          }
-}*/
+}
 }
 
 ?>

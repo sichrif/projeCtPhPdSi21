@@ -123,11 +123,11 @@
                     <div class="card-body">
                         <div class="table-responsive">
                         <?php
-include 'classes/employee.class.php';
+include 'classes/dbconnection.class.php';
 $db=new dbconnection;
 $cnnx=$db->connect();
-$reponse=$cnnx->prepare('SELECT * FROM employee WHERE eid =:param_id');
- $reponse->bindParam(':param_id', $_GET['eid']); 
+$reponse=$cnnx->prepare('SELECT * FROM customer WHERE cid =:param_id');
+ $reponse->bindParam(':param_id', $_GET['cid']); 
  $reponse->execute();  
  $donnees = $reponse->fetch();
 ?>
@@ -138,15 +138,21 @@ $reponse=$cnnx->prepare('SELECT * FROM employee WHERE eid =:param_id');
                                         <form action="update_employee.php" method="POST">
                                             <div class="form-group">
                                                 <div class="form-row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="firstName" name="name" class="form-control"  placeholder="First name" required="required" autofocus="autofocus">
-                                                            <label for="firstName">First name</label>
+                                                            <input type="text" id="firstName" name="id" class="form-control" value="<?php echo $donnees['cid']?>" placeholder="First name" required="required" autofocus="autofocus">
+                                                            <label for="firstName">client ID </label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="lastName" name="phone" class="form-control" value="<?php echo $donnees['name']?>"  placeholder="phone" required="required">
+                                                            <input type="text" id="firstName" name="name" class="form-control" value="<?php echo $donnees['name']?>" placeholder="First name" required="required" autofocus="autofocus">
+                                                            <label for="firstName">name </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                            <input type="text" id="lastName" name="phone" class="form-control" value="<?php echo $donnees['phone']?>"  placeholder="phone" required="required">
                                                             <label for="phone">Phone</label>
                                                         </div>
                                                     </div>
@@ -155,13 +161,13 @@ $reponse=$cnnx->prepare('SELECT * FROM employee WHERE eid =:param_id');
                                             <div class="form-group">
                                                 <div class="form-label-group">
                                                     <input type="email" id="inputEmail" name="email" value="<?php echo $donnees['email']?>" class="form-control" placeholder="Email address" required="required">
-                                                    <label for="inputEmail">Email address</label>
+                                                    <label for="inputEmail">Email </label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="form-label-group">
-                                                    <input type="id" id="inputEmail" name="id" value="<?php echo $donnees['eid']?>" class="form-control" placeholder="Email address" required="required" readonly>
-                                                    <label for="inputEmail">employee id</label>
+                                                    <input type="id" id="inputEmail" name="adressse" value="<?php echo $donnees['adresse']?>" class="form-control" placeholder="Email address" required="required" readonly>
+                                                    <label for="inputEmail">adresse</label>
                                                 </div>
                                             </div>
                                             
