@@ -17,4 +17,5 @@
     if(isset($_POST["cartAdd"])){
         $cart->addCart($_SESSION["id"] , $productInfo["pid"] , $_POST["quantity"] , "Not delivered");
     }
+    
     require "template/shop_single.phtml";

@@ -28,7 +28,7 @@
                                 <a href="CustomerHome.php" class="header-collect"><img src="images/img_avatar.png" class="imgCustom"><?= $_SESSION['name'] ?></a>
                             </div>
                     <div class="shop-cart header-collect">
-                        <a href="shop_cart.html"><img src="images/icon-basket.png" alt=""><?= var_dump($cartList); ?></a>
+                        <a href="shop_cart.html"><img src="images/icon-basket.png" alt=""><?php echo $cartList->rowCount()." Items - ".$price." DT" ?></a>
                         <div class="cart-wrap">
                             <div class="cart-blog">
                                 <div class="cart-item">
