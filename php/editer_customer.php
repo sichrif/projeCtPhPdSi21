@@ -9,16 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Dashboard</title>
+    <title> Admin - Dashboard/modifier customer</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -50,6 +50,7 @@
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                 </div>
                 </li>
+                
         </ul>
 
     </nav>
@@ -59,24 +60,24 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_Employee.html">
+                <a class="nav-link" href="../New_Employee.php">
                     <i class="fas fa-user-plus"></i>
                     <span>New Employee</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_vehicle.html">
+                <a class="nav-link" href="../New_vehicle.html">
                     <i class="fas fa-shipping-fast"></i>
                     <span>New vehicle</span></a>
             </li>
@@ -86,13 +87,13 @@
                     <span>Tables</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="product.php">Products</a>
+                    <a class="dropdown-item" href="../product.php">Products</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Employee.php">Employees</a>
+                    <a class="dropdown-item" href="../Employee.php">Employees</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Vehicle.php">Vehicles</a>
+                    <a class="dropdown-item" href="../Vehicle.php">Vehicles</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="customer.php">customers</a>
+                    <a class="dropdown-item" href="../customer.php">customers</a>
 
                 </div>
             </li>
@@ -118,62 +119,53 @@
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fas fa-table"></i> ADD product</div>
+                        <i class="fas fa-table"></i> ADD Employee</div>
                     <div class="card-body">
                         <div class="table-responsive">
-
+                        <?php
+include 'classes/employee.class.php';
+$db=new dbconnection;
+$cnnx=$db->connect();
+$reponse=$cnnx->prepare('SELECT * FROM employee WHERE eid =:param_id');
+ $reponse->bindParam(':param_id', $_GET['eid']); 
+ $reponse->execute();  
+ $donnees = $reponse->fetch();
+?>
                             <div class="container">
                                 <div class="card card-register mx-auto mt-5">
-                                    <div class="text-center card-header">ADD NEW PRODUCT</div>
+                                    <div class="text-center card-header">Register an Account</div>
                                     <div class="card-body">
-                                        <form method="POST" action="php/store.php">
+                                        <form action="update_employee.php" method="POST">
                                             <div class="form-group">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="name" name="name" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
-                                                            <label for="name">nom  de produit </label>
+                                                            <input type="text" id="firstName" name="name" class="form-control"  placeholder="First name" required="required" autofocus="autofocus">
+                                                            <label for="firstName">First name</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="lasdescription" name="description" class="form-control" placeholder="description de produit " required="required">
-                                                            <label for="description">description</label>
+                                                            <input type="text" id="lastName" name="phone" class="form-control" value="<?php echo $donnees['name']?>"  placeholder="phone" required="required">
+                                                            <label for="phone">Phone</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                                <div class="form-group">
-                                                    <select class="form-control" name="categorie"  id="categorie">
-                                                      <option value="" selected disabled hidden>Choose la categorie de produit </option>
-                                                      <option value="breakfast">breakfast</option>
-                                                      <option value="dessert">dessert</option>
-                                                      <option value="dinner">dinner</option>
-                                                      <option value="freshfood">freshfood</option>
-                                                      <option value="lunch">lunch</option>
-                                      
-                                                    </select>
-                                                  </div>
-                                            
                                             <div class="form-group">
-                                                <div class="form-row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="number" id="price" name="price" class="form-control" placeholder="prix de produit " required="required">
-                                                            <label for="price">prix de produit </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type='file' name='file' id="file"   required="required">
-                                                            
-                                                            
-                                                        </div>
-                                                    </div>
+                                                <div class="form-label-group">
+                                                    <input type="email" id="inputEmail" name="email" value="<?php echo $donnees['email']?>" class="form-control" placeholder="Email address" required="required">
+                                                    <label for="inputEmail">Email address</label>
                                                 </div>
                                             </div>
-                                            <button type="submit" name="done" class="btn btn-primary btn-block" >add product</button>
+                                            <div class="form-group">
+                                                <div class="form-label-group">
+                                                    <input type="id" id="inputEmail" name="id" value="<?php echo $donnees['eid']?>" class="form-control" placeholder="Email address" required="required" readonly>
+                                                    <label for="inputEmail">employee id</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary btn-block">ADD Employer</button>
                                         </form>
 
                                     </div>
@@ -184,6 +176,7 @@
                     </div>
 
                 </div>
+
             </div>
             <!-- /.container-fluid -->
 
@@ -191,7 +184,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright © Your Website 2019</span>
+                        
                     </div>
                 </div>
             </footer>

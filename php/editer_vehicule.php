@@ -12,13 +12,13 @@
     <title>Admin - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -59,24 +59,24 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_Employee.html">
+                <a class="nav-link" href="../New_Employee.html">
                     <i class="fas fa-user-plus"></i>
                     <span>New Employee</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_vehicle.html">
+                <a class="nav-link" href="../New_vehicle.html">
                     <i class="fas fa-shipping-fast"></i>
                     <span>New vehicle</span></a>
             </li>
@@ -96,7 +96,7 @@
 
                 </div>
             </li>
-        </ul>
+        </ul
 
         <div id="content-wrapper">
 
@@ -113,7 +113,15 @@
                 <!-- Icon Cards-->
 
 
-
+                <?php
+include 'classes/dbconnection.class.php';
+$db=new dbconnection;
+$cnnx=$db->connect();
+$reponse=$cnnx->prepare('SELECT * FROM vehicle WHERE vid =:param_id');
+ $reponse->bindParam(':param_id', $_GET['vid']); 
+ $reponse->execute();  
+ $donnees = $reponse->fetch();
+?>
 
                 <!-- DataTables Example -->
                 <div class="card mb-3">
@@ -126,53 +134,33 @@
                                 <div class="card card-register mx-auto mt-5">
                                     <div class="text-center card-header">ADD NEW PRODUCT</div>
                                     <div class="card-body">
-                                        <form method="POST" action="php/store.php">
+                                        <form method="POST" action="update_vehicule.php">
                                             <div class="form-group">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
+                                                    <div class="form-label-group">
+                                                            <input type="text" value="<?php echo $donnees['vid']?>" id="v_number" name="vid" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus" readonly>
+                                                            <label for="name">ID vehicule </label>
+                                                        </div>
                                                         <div class="form-label-group">
-                                                            <input type="text" id="name" name="name" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
-                                                            <label for="name">nom  de produit </label>
+                                                            <input type="text" value="<?php echo $donnees['vehicle_number']?>" id="v_number" name="v_number" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
+                                                            <label for="name">Numero de vehicule </label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="text" id="lasdescription" name="description" class="form-control" placeholder="description de produit " required="required">
-                                                            <label for="description">description</label>
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                             
                                                 <div class="form-group">
-                                                    <select class="form-control" name="categorie"  id="categorie">
+                                                    <select class="form-control" name="statu" value="<?php echo $donnees['status']?>  id="status">
                                                       <option value="" selected disabled hidden>Choose la categorie de produit </option>
-                                                      <option value="breakfast">breakfast</option>
-                                                      <option value="dessert">dessert</option>
-                                                      <option value="dinner">dinner</option>
-                                                      <option value="freshfood">freshfood</option>
-                                                      <option value="lunch">lunch</option>
-                                      
+                                                      <option value="0">occuper </option>
+                                                      <option value="1">disponible</option>
+                                                      
                                                     </select>
                                                   </div>
                                             
-                                            <div class="form-group">
-                                                <div class="form-row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="number" id="price" name="price" class="form-control" placeholder="prix de produit " required="required">
-                                                            <label for="price">prix de produit </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type='file' name='file' id="file"   required="required">
-                                                            
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                           
                                             <button type="submit" name="done" class="btn btn-primary btn-block" >add product</button>
                                         </form>
 

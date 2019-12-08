@@ -1,12 +1,10 @@
 <?php
- include 'classes/employee.class.php';
-$name=$_POST['name'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
-$password=$_POST['password'];
+ include 'classes/vehicule.class.php';
+$vnumber=$_POST['v_number'];
+$status=$_POST['statu'];
 
-$aa=new employee;
-$bb=$aa->addemployee($name,$email,$phone,$password);
-header('location:../employee.php');
+$aa=new vehicule;
+$bb=$aa->add_new_vehicule($vnumber,$status);
+header('location:../vehicle.php');
 
  

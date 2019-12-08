@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Dashboard</title>
+    <title>Admin - Dashboard/customer</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto ml-md-0">
 
-            <l <li class="nav-item dropdown no-arrow">
+                 <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
@@ -90,9 +90,9 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="Employee.php">Employees</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Vehicle.html">Vehicles</a>
+                    <a class="dropdown-item" href="Vehicle.php">Vehicles</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="404.html">customers</a>
+                    <a class="dropdown-item" href="customer.php">customers</a>
 
                 </div>
             </li>
@@ -124,26 +124,43 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>client ID</th>
+                                        <th>name</th>
+                                        <th>email </th>
+                                        
+                                        <th>addresse</th>
+                                        <th>phone</th>
+                                        <th>modifier</th>
+                                        <th>remove</th>
+
+
+                                        
                                     </tr>
                                 </thead>
+                                <?php 
+                                include 'php/classes/customer.class.php';
+                                $product = new customer();
+                                $listvehicul = $product->readAllCustomer();
+                                while ($data = $listvehicul->fetch()) 
+                                   {
+                                       
+                             
+                                echo '<tbody><tr> ';
+                                     echo ' <td>'.$data['cid'].'</td>';
+                                     echo '<td>'.$data['name'].'</td>';
+                                     echo '<td>'.$data['email'].'</td>';
+                                     echo '<td>'.$data['adresse'].'</td>';
+                                     echo '<td>'.$data['phone'].'</td>';
+                                     echo '<td><a href="php/editer_customer.php?cid='.$data['cid'].'"><i class="fa fa-edit"></i></a></td>';
+                                     echo '<td><a href="php/delete_customer.php?cid='.$data['cid'].'"><i class="fa fa-trash"></i></a></td>';
+                                    echo '</tr></tbody>';
+                             
+                                   }
+                             
+                             
+                             ?>
+                               
 
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -157,7 +174,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright © Your Website 2019</span>
+                        
                     </div>
                 </div>
             </footer>
@@ -214,4 +231,3 @@
 </body>
 
 </html>
-

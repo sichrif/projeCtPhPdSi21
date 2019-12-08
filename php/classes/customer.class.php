@@ -2,7 +2,7 @@
 
 require 'dbconnect.class.php';
  
-class vehicule{
+class customer{
     private $cnx;
 
 
@@ -13,9 +13,9 @@ class vehicule{
 
     }
 
-    public function readAllVehicule(){
+    public function readAllCustomer(){
         try{
-            $req='SELECT * FROM vehicle';
+            $req='SELECT * FROM customer';
             $result = $this->cnx->prepare($req);
             $result->execute();
             return $result;
@@ -24,7 +24,7 @@ class vehicule{
             echo $e->getMessage();
     }
 }
-public function add_new_vehicule($statu,$vnumber)
+/*public function add_new_vehicule($statu,$vnumber)
 {
         try{
             if(isset($_POST['done'])){   
@@ -66,7 +66,7 @@ public function delete($id){
         echo  $e->getMessage();
          }
 }
-*/
+
 public function update($vid,$statu,$v_number){
     try {
         $rep='UPDATE `vehicle` SET 
@@ -81,7 +81,7 @@ public function update($vid,$statu,$v_number){
     }catch (Exception $e) {
         echo  $e->getMessage();
          }
-}
+}*/
 }
 
 ?>

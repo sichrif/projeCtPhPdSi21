@@ -7,4 +7,4 @@ $name=$_POST['name'];
 $pid=$_POST['pid'];
 $up = new product;
 $update = $up->update($name,$description,$price,$file,$pid);
-header("location:../home.php");
+header("location:../product.php");

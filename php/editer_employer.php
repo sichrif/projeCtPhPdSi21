@@ -60,24 +60,24 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="New_product.html">
+                <a class="nav-link" href="../New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_Employee.php">
+                <a class="nav-link" href="../New_Employee.php">
                     <i class="fas fa-user-plus"></i>
                     <span>New Employee</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="New_vehicle.html">
+                <a class="nav-link" href="../New_vehicle.html">
                     <i class="fas fa-shipping-fast"></i>
                     <span>New vehicle</span></a>
             </li>
@@ -87,13 +87,13 @@
                     <span>Tables</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="product.php">Products</a>
+                    <a class="dropdown-item" href="../product.php">Products</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Employee.php">Employees</a>
+                    <a class="dropdown-item" href="../Employee.php">Employees</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Vehicle.html">Vehicles</a>
+                    <a class="dropdown-item" href="../Vehicle.php">Vehicles</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="404.html">customers</a>
+                    <a class="dropdown-item" href="../customer.php">customers</a>
 
                 </div>
             </li>
@@ -146,7 +146,7 @@ $reponse=$cnnx->prepare('SELECT * FROM employee WHERE eid =:param_id');
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="lastName" name="phone" class="form-control"value="<?php echo $donnees['name']?>"s placeholder="phone" required="required">
+                                                            <input type="text" id="lastName" name="phone" class="form-control" value="<?php echo $donnees['name']?>"  placeholder="phone" required="required">
                                                             <label for="phone">Phone</label>
                                                         </div>
                                                     </div>

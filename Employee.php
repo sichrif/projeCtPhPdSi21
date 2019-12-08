@@ -90,9 +90,9 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="Employee.php">Employees</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Vehicle.html">Vehicles</a>
+                    <a class="dropdown-item" href="Vehicle.php">Vehicles</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="404.html">customers</a>
+                    <a class="dropdown-item" href="customer.php">customers</a>
 
                 </div>
             </li>
@@ -150,7 +150,7 @@
                                      echo '<td>'.$data['phone'].'</td>';
                                      echo '<td>'.$data['description'].'</td>';
                                      echo '<td><a href="php/editer_employer.php?eid='.$data['eid'].'"><i class="fa fa-edit"></i></a></td>';
-                                     echo '<td><a href="php/delete.php?eid='.$data['eid'].'"><i class="fa fa-trash"></i></a></td>';
+                                     echo '<td><a href="php/delete_employee.php?eid='.$data['eid'].'"><i class="fa fa-trash"></i></a></td>';
                                     echo '</tr></tbody>';
                              
                                    }

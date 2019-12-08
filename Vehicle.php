@@ -41,7 +41,7 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto ml-md-0">
 
-             <li class="nav-item dropdown no-arrow">
+            <l <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
@@ -118,72 +118,50 @@
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fas fa-table"></i> ADD product</div>
+                        <i class="fas fa-table"></i> Data Table Example</div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>vihiculeD</th>
+                                        <th>vehicule number</th>
+                                        <th>status </th>
+                                        
+                                        <th>modifier</th>
+                                        <th>remove</th>
 
-                            <div class="container">
-                                <div class="card card-register mx-auto mt-5">
-                                    <div class="text-center card-header">ADD NEW PRODUCT</div>
-                                    <div class="card-body">
-                                        <form method="POST" action="php/store.php">
-                                            <div class="form-group">
-                                                <div class="form-row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="text" id="name" name="name" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
-                                                            <label for="name">nom  de produit </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="text" id="lasdescription" name="description" class="form-control" placeholder="description de produit " required="required">
-                                                            <label for="description">description</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                                <div class="form-group">
-                                                    <select class="form-control" name="categorie"  id="categorie">
-                                                      <option value="" selected disabled hidden>Choose la categorie de produit </option>
-                                                      <option value="breakfast">breakfast</option>
-                                                      <option value="dessert">dessert</option>
-                                                      <option value="dinner">dinner</option>
-                                                      <option value="freshfood">freshfood</option>
-                                                      <option value="lunch">lunch</option>
-                                      
-                                                    </select>
-                                                  </div>
-                                            
-                                            <div class="form-group">
-                                                <div class="form-row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type="number" id="price" name="price" class="form-control" placeholder="prix de produit " required="required">
-                                                            <label for="price">prix de produit </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-label-group">
-                                                            <input type='file' name='file' id="file"   required="required">
-                                                            
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="submit" name="done" class="btn btn-primary btn-block" >add product</button>
-                                        </form>
+                                        
+                                    </tr>
+                                </thead>
+                                <?php 
+                                include 'php/classes/vehicule.class.php';
+                                $product = new vehicule();
+                                $listvehicul = $product->readAllVehicule();
+                                while ($data = $listvehicul->fetch()) 
+                                   {
+                                       
+                             
+                                echo '<tbody><tr> ';
+                                     echo ' <td>'.$data['vid'].'</td>';
+                                     echo '<td>'.$data['vehicle_number'].'</td>';
+                                     echo '<td>'.$data['status'].'</td>';
+                                     echo '<td><a href="php/editer_vehicule.php?vid='.$data['vid'].'"><i class="fa fa-edit"></i></a></td>';
+                                     echo '<td><a href="php/delete_vehicule.php?vid='.$data['vid'].'"><i class="fa fa-trash"></i></a></td>';
+                                    echo '</tr></tbody>';
+                             
+                                   }
+                             
+                             
+                             ?>
+                               
 
-                                    </div>
-                                </div>
-                            </div>
-
+                            </table>
                         </div>
                     </div>
-
+                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
+
             </div>
             <!-- /.container-fluid -->
 
@@ -191,7 +169,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright © Your Website 2019</span>
+                        
                     </div>
                 </div>
             </footer>

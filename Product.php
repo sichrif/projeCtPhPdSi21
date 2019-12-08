@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="New_product.html">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
@@ -90,7 +90,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="Employee.php">Employees</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="Vehicle.html">Vehicles</a>
+                    <a class="dropdown-item" href="Vehicle.php">Vehicles</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="404.html">customers</a>
 
@@ -151,8 +151,8 @@
                                      echo '<td>'.$data['categorie'].'</td>';
                                      echo '<td>'.$data['price'].'</td>';
                                      echo '<td><img style="width:250px;height:200px" src="php/image/'.$data['file'].'"/></td>';
-                                     echo '<td><a href="php/editer.php?pid='.$data['pid'].'"><i class="fa fa-edit"></i></a></td>';
-                                     echo '<td><a href="php/delete.php?pid='.$data['pid'].'"><i class="fa fa-trash"></i></a></td>';
+                                     echo '<td><a href="php/editer_product.php?pid='.$data['pid'].'"><i class="fa fa-edit"></i></a></td>';
+                                     echo '<td><a href="php/delete_product.php?pid='.$data['pid'].'"><i class="fa fa-trash"></i></a></td>';
                                     echo '</tr></tbody>';
                              
                                    }
