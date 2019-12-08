@@ -6,4 +6,4 @@ $phone=$_POST['phone'];
 $id=$_POST['id'];
 $g=new employee;
 $gg=$g->update($nom,$email,$phone,$id);
-//header('location:../employee.php');
+header('location:../employee.php');

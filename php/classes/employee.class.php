@@ -33,9 +33,12 @@ class employee
     public function update($nom,$email,$phone,$id)
     {
         try{
-            $reponse=$this->cnnx->prepare('UPDATE employee 
+            $reponse=$this->cnnx->prepare(' UPDATE `employee` SET
+             `eid`=:param_id,`name`=:param_firstname,`phone`=:param_phone,`email`=:param_email
+             WHERE eid=:param_id');
+           /* $reponse=$this->cnnx->prepare('UPDATE employee 
             SET name=:param_firstname,phone=:param_phone,email=:param_email 
-            where eid=:param_id');
+            where eid=:param_id');*/
             $reponse->bindParam(':param_firstname',$nom);
             $reponse->bindParam(':param_phone',$phone);
             $reponse->bindParam(':param_email',$email);

@@ -7,6 +7,6 @@ $password=$_POST['password'];
 
 $aa=new employee;
 $bb=$aa->addemployee($name,$email,$phone,$password);
-//header('location:admin.php');
+header('location:../employee.php');
 
  

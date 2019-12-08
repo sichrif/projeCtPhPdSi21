@@ -41,7 +41,7 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto ml-md-0">
 
-              <li class="nav-item dropdown no-arrow">
+             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="New_product.html">
+                <a class="nav-link" href="#">
                     <i class="far fa-plus-square"></i>
                     <span>New Product</span></a>
             </li>
@@ -118,38 +118,48 @@
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fas fa-table"></i> Data Table Example</div>
+                        <i class="fas fa-table"></i> ADD product</div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </thead>
 
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
+                            <div class="container">
+                                <div class="card card-register mx-auto mt-5">
+                                    <div class="text-center card-header">ADD NEW PRODUCT</div>
+                                    <div class="card-body">
+                                        <form method="POST" action="php/store.php">
+                                            <div class="form-group">
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-label-group">
+                                                            <input type="text" id="v_number" name="v_number" class="form-control" placeholder="nom de produit" required="required" autofocus="autofocus">
+                                                            <label for="name">numero de vehicule </label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                                <div class="form-group">
+                                                    <select class="form-control" name="statu"  id="status">
+                                                      <option value="" selected disabled hidden>Choose la categorie de produit </option>
+                                                      <option value="0">occuper </option>
+                                                      <option value="1">disponible</option>
+                                                      
+                                                    </select>
+                                                  </div>
+                                            
+                                           
+                                            <button type="submit" name="done" class="btn btn-primary btn-block" >add product</button>
+                                        </form>
 
-                                </tbody>
-                            </table>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
 
+                </div>
             </div>
             <!-- /.container-fluid -->
 
