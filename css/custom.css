@@ -1,0 +1,13 @@
+.imgCustom{
+    widows: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.modal-body2{
+    overflow: scroll;
+}
+
+.title{
+    height: 162px;
+}
