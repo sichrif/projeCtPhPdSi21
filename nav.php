@@ -9,7 +9,7 @@
     while($row = $cartList->fetch()){
         $productInfo = $product->getProduct($row["pid"]);
         $productInfo = $productInfo->fetch();
-        $price = $price + $productInfo["price"];    
+        $price = $price + ($row['qty']*$productInfo['price']);    
     }
     $cartList = $cart->getAllInCart($_SESSION["id"]);
     require "template/nav.phtml";

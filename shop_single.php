@@ -16,6 +16,7 @@
     $cart = new cart;
     if(isset($_POST["cartAdd"])){
         $cart->addCart($_SESSION["id"] , $productInfo["pid"] , $_POST["quantity"] , "Not delivered");
+        header("location: shop_cart.php");
     }
     
     require "template/shop_single.phtml";

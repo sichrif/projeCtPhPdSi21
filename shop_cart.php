@@ -12,5 +12,6 @@
     $product = new Product();
     $productInfo = $product->getProduct(4);
     $productInfo = $productInfo->fetch();
+
     require "template/shop_cart.phtml";
 ?>

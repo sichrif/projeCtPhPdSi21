@@ -38,117 +38,8 @@
             </div>
         </div>
     </div>  
-    <div class="wrapper">
         <!-- Start Header -->
-        <header>
-            <div class="header-part header-reduce sticky">
-                <div class="header-top">
-                    <div class="container">
-                        <div class="header-top-inner">
-                            <div class="header-top-left">
-                            </div>
-                            <div class="header-top-right">
-                                <div class="social-top">
-                                </div>
-                                <div class="language-menu">
-                                    <a href="#" class="current-lang">Setting Menu <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Account Setting</a></li>
-                                            <li><a href="logOut.php"><i class="fa fa-angle-right" aria-hidden="true"></i>Log out</a></li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-<div class="header-bottom">
-        <div class="container">
-            <div class="header-info">
-                <div class="header-info-inner">
-                        <div class="book-table header-collect book-md">
-                                <a href="CustomerHome.html" class="header-collect"><img src="images/img_avatar.png" class="imgCustom">UserName</a>
-                            </div>
-                    <div class="shop-cart header-collect">
-                        <a href="shop_cart.html"><img src="images/icon-basket.png" alt="">2 items - $ 20.89</a>
-                        <div class="cart-wrap">
-                            <div class="cart-blog">
-                                <div class="cart-item">
-                                    <div class="cart-item-left">
-                                        <img src="images/img59.png" alt="">
-                                    </div>
-                                    <div class="cart-item-right">
-                                        <h6>Caramel Chesse Cake</h6>
-                                        <span>$ 14.00</span>
-                                    </div>
-                                    <span class="delete-icon"></span>
-                                </div>
-                                <div class="cart-item">
-                                    <div class="cart-item-left">
-                                        <img src="images/img60.png" alt="">
-                                    </div>
-                                    <div class="cart-item-right">
-                                        <h6>Caramel Chesse Cake</h6>
-                                        <span>$ 14.00</span>
-                                    </div>
-                                    <span class="delete-icon"></span>
-                                </div>
-                                <div class="subtotal">
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <h6>Subtotal :</h6>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <span>$ 140.00</span>
-                                    </div>
-                                </div>
-                                <div class="cart-btn">
-                                    <a href="shop_cart.php" class="btn-black view">VIEW ALL</a>
-                                    <a href="shopCheckout.php" class="btn-main checkout">CHECK OUT</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="search-part">
-                        <a href="#"></a>
-                        <div class="search-box">
-                            <input type="text" name="txt" placeholder="Search">
-                            <input type="submit" name="submit" value=" ">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-icon">
-                <a href="#" class="hambarger">
-                    <span class="bar-1"></span>
-                    <span class="bar-2"></span>
-                    <span class="bar-3"></span>
-                </a>
-            </div>
-
-            
-            <div class="menu-main">
-                    <ul>
-                        <li class="mega-menu">
-                            <a href="CustomerHome.html">Home</a>
-                        </li>
-    
-                        <li class="mega-menu">
-                            <a href="orders.html">Orders</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="logo">
-                    <a href="customerHome.html"><img src="images/logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="logo">
-                <a href="customerHome.html"><img src="images/logo.png" alt=""></a>
-            </div>
-        </div>
-    </div>
-            </div>
-        </header>
+        <?php require "nav.php"; ?>
         <!-- End Header -->
        <!-- Start Main -->
        <main>
@@ -184,20 +75,16 @@
                                     <th>PRICE</th>
                                     <th>QUANTITY</th>
                                     <th>TOTAL</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                        <tr>
-                                            <th>PRODUCT</th>
-                                            <th>PRICE</th>
-                                            <th>QUANTITY</th>
-                                            <th>TOTAL</th>
-                                        </tr>
                                         <?php
+                                        $cartList = $cart->getAllInCart($_SESSION["id"]);
                                         while($row = $cartList->fetch()){
                                         $productInfo = $product->getProduct($row["pid"]);
                                         $productInfo = $productInfo->fetch();
-
                                         echo"
                                         <tr>
                                             <td>
@@ -205,32 +92,33 @@
                                                     <img src='images/img72.png' alt=''>
                                                 </div>
                                                 <div class='product-cart-title'>
-                                                    <span>".$productInfo['name']."$</span>
+                                                    <span>".$productInfo['name']."</span>
                                                 </div>
                                             </td>
                                             <td>
-                                                <strong>$59</strong>
+                                                <strong>".$productInfo['price']."</strong>
                                             </td>
                                             <td>
                                                 <div class='price-textbox'>
-                                                    <span class='minus-text'><i class=icon-minus'></i></span>
-                                                    <input name='txt' placeholder='1' type='text'>
-                                                    <span class='plus-text'><i class='icon-plus'></i></span>
+                                                    <input name='qty' type='text' value='".$row['qty']."'>
+                                                </div>
+                                                <div class='price-textbox'>
+                                                    <input hidden name='id' type='text' value='".$row['id']."'>
                                                 </div>
                                             </td>
+                                            <td>".($row['qty']*$productInfo['price'])."</td>
+                                            
+                                            <td class='shop-cart-close'><a href='delete.php?id=".$row['id']."'><i class='icon-cancel-5'></i></td>
                                             <td>
-                                                $59
+                                            <a href='update.php?id=".$row['id']."' class='btn-medium btn-skin pull-right'>UPDATE QUANTITY</a>
                                             </td>
-                                            <td class='shop-cart-close'><i class='icon-cancel-5'></i></td>
-                                        </tr>";
+                                        </tr>
+                                        ";
                                         }
-                                    ?>
+                                    ?>                      
+
                                     </tbody>
                         </table>
-                        <div class="product-cart-detail">
-                           
-                            <a href="#" class="btn-medium btn-skin pull-right">UPDATE cart</a>
-                        </div>
                     </div>
                     <div class="cart-total wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                         <div class="cart-total-title">
@@ -248,7 +136,7 @@
                             <h5>TOTAL <span>$140.00</span></h5>
                         </div>
                         <div class="proceed-check">
-                            <a href="shop_checkout.html" class="btn-primary-gold btn-medium">PROCEED TO CHECKOUT</a>
+                            <a href="shop_checkout.php" class="btn-primary-gold btn-medium">PROCEED TO CHECKOUT</a>
                         </div>
                     </div>
                 </div>
@@ -334,7 +222,6 @@
     <script src="js/app.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 
 <!-- Mirrored from laboom.sk-web-solutions.com/blog_2col.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Dec 2019 20:36:33 GMT -->
 </html>

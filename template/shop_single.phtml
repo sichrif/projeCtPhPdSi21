@@ -103,7 +103,7 @@
                             <h4 class="text-coffee"><?= $productInfo["name"]; ?></h4>
                             
                             <p><?= $productInfo["description"]; ?></p>
-                            <h3 class="text-coffee"><?= $productInfo["price"]; ?></h3>
+                            <h3 class="text-coffee"><?= $productInfo["price"]." TD"; ?></h3>
                             <section>
                                     <form action="<?= $_SERVER['PHP_SELF']."?pid=".$_GET["pid"]; ?>" method='POST'>
                                         <div class="price-textbox">
@@ -347,7 +347,6 @@
     <script src="js/app.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 
 <!-- Mirrored from laboom.sk-web-solutions.com/blog_2col.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Dec 2019 20:36:33 GMT -->
 </html>
