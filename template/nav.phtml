@@ -1,0 +1,107 @@
+<header>
+            <div class="header-part header-reduce sticky">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="header-top-inner">
+                            <div class="header-top-left">
+                            </div>
+                            <div class="header-top-right">
+                                <div class="social-top">
+                                </div>
+                                <div class="language-menu">
+                                    <a href="#" class="current-lang">Setting Menu <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <ul>
+                                            <li><a href="setting.php"><i class="fa fa-angle-right" aria-hidden="true"></i>Account Setting</a></li>
+                                            <li><a href="logOut.php"><i class="fa fa-angle-right" aria-hidden="true"></i>Log out</a></li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+<div class="header-bottom">
+        <div class="container">
+            <div class="header-info">
+                <div class="header-info-inner">
+                        <div class="book-table header-collect book-md">
+                                <a href="CustomerHome.php" class="header-collect"><img src="images/img_avatar.png" class="imgCustom"><?= $_SESSION['name'] ?></a>
+                            </div>
+                    <div class="shop-cart header-collect">
+                        <a href="shop_cart.php"><img src="images/icon-basket.png" alt=""><?php echo $cartList->rowCount()." Items | ".$price." DT" ?></a>
+                        <div class="cart-wrap">
+                            <div class="cart-blog">
+                            <?php
+                                    $i=0;
+                                    while($row = $cartList->fetch()){
+                                        $productInfo = $product->getProduct($row["pid"]);
+                                        $productInfo = $productInfo->fetch();
+                                        echo"
+                                            <div class='cart-item'>
+                                                <div class='cart-item-left'>
+                                                    <img src='images/img59.png' alt=''  >
+                                                </div>
+                                                <div class='cart-item-right'>
+                                                    <h6>".$productInfo["name"]." * ".$row['qty']."</h6>
+                                                    <span>".$productInfo["price"]." DT</span>
+                                                </div>
+                                            </div>";
+                                            $i++;
+                                            if($i == 4){
+
+                                            break;}
+                                    }
+
+                                ?>
+                                <div class="subtotal">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <h6>Subtotal :</h6>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <span><?= $price." DT"; ?></span>
+                                    </div>
+                                </div>
+                                <div class="cart-btn">
+                                    <a href="shop_cart.php" class="btn-black view">VIEW ALL</a>
+                                    <a href="shop_checkout.php" class="btn-main checkout">CHECK OUT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-part">
+                        <a href="#"></a>
+                        <div class="search-box">
+                            <input type="text" name="txt" placeholder="Search">
+                            <input type="submit" name="submit" value=" ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-icon">
+                <a href="#" class="hambarger">
+                    <span class="bar-1"></span>
+                    <span class="bar-2"></span>
+                    <span class="bar-3"></span>
+                </a>
+            </div>
+
+            
+            <div class="menu-main">
+                <ul>
+                    <li class="mega-menu">
+                        <a href="CustomerHome.php">Home</a>
+                    </li>
+
+                    <li class="mega-menu">
+                        <a href="orders.php">Orders</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="customerHome.php"><img src="images/logo.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+            </div>
+        </header>
