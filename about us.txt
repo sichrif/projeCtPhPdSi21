@@ -1,0 +1,57 @@
+<!-- Start About Us -->
+                <section class="client banner-bg invert invert-black home-icon wow fadeInDown" data-background="images/banner3.jpg" data-wow-duration="1000ms" data-wow-delay="300ms" id="about_us">
+                    <div class="icon-default icon-black">
+                        <img src="images/icon21.png" alt="">
+                    </div>
+                    <div class="container">
+                        <div class="build-title">
+                            <h2>About Us</h2>
+                            <h6>Team Bits N Bytes </h6>
+                        </div>
+                        <div class="client-say">
+                            <div class="owl-carousel owl-theme" data-items="1" data-laptop="1" data-tablet="1" data-mobile="1" data-nav="false" data-dots="true" data-autoplay="true" data-speed="1800" data-autotime="5000">
+                                <div class="item">
+                                    <p><img src="images/taher.png" alt=""></p>
+                                    <h5>Taher Said</h5>
+                                    <p>Web Site Creator</p>
+                                    <p>Student at Higher Institue Of Bizerte .
+                                        <br> Class Information System Developpement 21
+                                        <br>2nd Group</p>
+                                </div>
+                                <div class="item">
+                                    <p><img src="images/houssem.png" alt=""></p>
+                                    <h5>Houssem Troudi</h5>
+                                    <p>Web Site Creator</p>
+                                    <p>Student at Higher Institue Of Bizerte .
+                                        <br> Class Information System Developpement 21
+                                        <br>2nd Group</p>
+                                </div>
+                                <div class="item">
+                                    <p><img src="images/monta.png" alt=""></p>
+                                    <h5>Montassar Silini</h5>
+                                    <p>Web Site Creator</p>
+                                    <p>Student at Higher Institue Of Bizerte .
+                                        <br> Class Information System Developpement 21
+                                        <br>2nd Group</p>
+                                </div>
+                                <div class="item">
+                                    <p><img src="images/takwa.png" alt=""></p>
+                                    <h5>Takwa Mekni</h5>
+                                    <p>Web Site Creator</p>
+                                    <p>Student at Higher Institue Of Bizerte .
+                                        <br> Class Information System Developpement 21
+                                        <br>1st Group</p>
+                                </div>
+                                <div class="item">
+                                    <p><img src="images/chrif.png" alt=""></p>
+                                    <h5>Mohammed Chrif</h5>
+                                    <p>Web Site Creator</p>
+                                    <p>Student at Higher Institue Of Bizerte .
+                                        <br> Class Information System Developpement 21
+                                        <br>1st Group</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Client Say -->
